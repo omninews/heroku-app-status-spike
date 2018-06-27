@@ -10,9 +10,9 @@ const heroku = new Heroku({token: herokuToken });
 const appName = process.argv[2];
 heroku.get(`/apps/${appName}/dynos`)
   .then(dynos => {
-    const allUp = dynos.every(d => d.status === "up");
+    const allUp = dynos.every(d => d.state === "up");
     if (!allUp) {
-      const allEitherStartingOrUp = dynos.every(d => d.status === "up" || d.status === "starting");
+      const allEitherStartingOrUp = dynos.every(d => d.state === "up" || d.state === "starting");
       if (allEitherStartingOrUp) {
         console.log("Yellow");
         process.exit(0);
