@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "heroku-client": "^3.0.6",
-    "ramda": "^0.25.0"
+    "heroku-client": "^3.0.6"
   }
 }
